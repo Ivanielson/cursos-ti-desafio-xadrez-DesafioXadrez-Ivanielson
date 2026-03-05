@@ -3,6 +3,26 @@
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+void bishop(int movementCounter) {
+    if (movementCounter > 0) {
+        printf("Cima, Direita\n");
+        bishop(movementCounter - 1);
+    }
+}
+
+void tower(int movementCounter) {
+    if (movementCounter > 0) {
+        printf("Direita\n");
+        tower(movementCounter - 1);
+    }
+}
+
+void queen(int movementCounter) {
+    if (movementCounter > 0) {
+        printf("Esquerda\n");
+        queen(movementCounter - 1);
+    }
+}
 
 int main() {
     // Nível Novato - Movimentação das Peças
@@ -12,7 +32,7 @@ int main() {
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
     printf("****** Bisbo se movimentando ******\n");
     for (int count = 1; count <= 5; count++) {
-        printf("Direita\n");
+        printf("Cima, Direita\n");
     }
 
     // Implementação de Movimentação da Torre
@@ -20,7 +40,7 @@ int main() {
     printf("\n****** Torre se movimentando ******\n");
     int counter = 1;
     while (counter <= 5) {
-        printf("Cima, Direita\n");
+        printf("Direita\n");
         counter++;
     }
     
@@ -51,6 +71,14 @@ int main() {
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
     // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    printf("\n****** Bisbo se movimentando ******\n");
+    bishop(5);
+
+    printf("\n****** Torre se movimentando ******\n");
+    tower(5);
+
+    printf("\n****** Rainha se movimentando ******\n");
+    queen(8);
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
